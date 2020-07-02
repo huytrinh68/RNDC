@@ -1,0 +1,52 @@
+<html>
+
+<style>
+	body {
+		background-color: #c3c3c3;
+		align-items: center;
+		justify-content: center;
+		display: flex;
+	}
+	div {
+		padding-top: 10px;
+		padding-bottom: 10px;
+		width: 150px;
+		display: flex;
+	}
+	button {
+		margin-left: 5px;
+		border-radius: 10px;
+		border: 1px solid #c3c3c3;
+	}
+	input {
+		height: 30px;
+		width: 150px;
+		padding-left: 10px;
+		border-radius: 10px;
+		border: 1px solid #c3c3c3;
+	}
+
+</style>
+<body>
+	<div id="message">
+		<input type="text" placeholder="Input here ..." type="number" id="number"/>
+		<button id="guessButton">Guess</button>
+	</div>
+	<script type="text/javascript">
+		let button = document.getElementById('guessButton');
+		button.addEventListener('click', function() {
+		  let numberInput = document.getElementById('number').value
+		  const result = Math.floor(Math.random() * 100);
+		  if(numberInput < result){
+		  	alert('Your number is too slow. Correct number is '+result)
+		  }
+		  else if(numberInput == result){
+		  	alert('Congratulations!! You guessed correctly.')
+		  }
+		  else {
+		  	alert('Your number is too high. Correct number is '+result)
+		  }
+		});
+	</script>
+</body>
+</html>
