@@ -42,10 +42,11 @@ class ScreenTwo extends BaseScreen {
       </View>
     )
   }
+
   renderQuote = () => {
     return (
       <View style={{ marginTop: 25 }}>
-        <Text style={{ fontWeight: '600', color:'#767b8c' }}>{quoteData}</Text>
+        <Text style={{ fontWeight: '600', color: '#767b8c' }}>{quoteData}</Text>
       </View>
     )
   }
@@ -66,20 +67,20 @@ class ScreenTwo extends BaseScreen {
         />
       </View>
     )
-  } 
+  }
   renderItemActionBar = (type, icon, size) => {
     return (
-      <View style={{width:size, justifyContent:'center', alignItems:icon === 'ios-bookmark'? 'flex-end' : 'center', marginTop:30}}>
-        <Icon name={icon} type={type} style={{color:'#adb1cc'}} />
+      <View style={{ width: size, justifyContent: 'center', alignItems: icon === 'ios-bookmark' ? 'flex-end' : 'center', marginTop: 30 }}>
+        <Icon name={icon} type={type} style={{ color: '#adb1cc' }} />
       </View>
     )
   }
   renderActionBar = () => {
     return (
-      <View style={{flexDirection:'row'}}>
-        {this.renderItemActionBar('AntDesign','heart','10%')}
-        {this.renderItemActionBar('Ionicons','chatbubble','20%')}
-        {this.renderItemActionBar('Ionicons','ios-bookmark','70%')}
+      <View style={{ flexDirection: 'row' }}>
+        {this.renderItemActionBar('AntDesign', 'heart', '10%')}
+        {this.renderItemActionBar('Ionicons', 'chatbubble', '20%')}
+        {this.renderItemActionBar('Ionicons', 'ios-bookmark', '70%')}
       </View>
     )
   }

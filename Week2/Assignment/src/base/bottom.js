@@ -9,7 +9,7 @@ const Bottom = () => {
                 <TouchableOpacity
                     hitSlop={{ top: 20, left: 50, right: 50, bottom: 20 }}
                 >
-                    <Icon type={type} name={icon} style={{fontSize:22, color:'#7881a4'}}/>
+                    <Icon type={type} name={icon} style={{fontSize:24, color:'#7881a4'}}/>
                 </TouchableOpacity>
             </View>
         )

@@ -20,7 +20,7 @@ const Header = ({parent}) => {
         )
     }
     return (
-        <View style={{ flexDirection: 'row', height: 50, paddingLeft: 20, paddingRight: 20, backgroundColor:'transparent', zIndex:999999, position:'absolute', top:20, left:0, right:0 }}>
+        <View style={{ flexDirection: 'row', height: 50, paddingLeft: 20, paddingRight: 20, backgroundColor:'transparent', zIndex:999999, position:'absolute', top:40, left:0, right:0 }}>
             {contentHeader('Ionicons', 'arrow-back-sharp')}
             {contentHeader('Ionicons', 'grid-outline')}
         </View>
