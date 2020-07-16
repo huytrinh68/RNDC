@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import { View, Text, TouchableOpacity, Image } from 'react-native'
 import { Images } from '@media'
+
 let playerPoint = 0
 let computerPoint = 0
+
 const App = () => {
   const [choose, setChoose] = useState(0)
   const [computer, setComputer] = useState(0)
@@ -15,9 +17,10 @@ const App = () => {
       </View>
     )
   }
+
   const handleResult = () => {
-    if(!computer) return
-    if ( computer === choose) {
+    if (!computer) return
+    if (computer === choose) {
       return "Hoà rồi =.="
     }
     else if (choose === 1 && computer === 2 || choose === 2 && computer === 3 || choose === 3 && computer === 1) {
@@ -29,6 +32,7 @@ const App = () => {
       return "Bạn thắng rồi nhé :v"
     }
   }
+
   const panelResult = () => {
     return (
       <View style={{ alignItems: 'center' }}>
@@ -42,18 +46,65 @@ const App = () => {
     )
   }
 
-  const imageChoose = (source) => {
+  const switchName = type => {
+    switch (type) {
+      case 1:
+        return "Kéo";
+      case 2:
+        return "Búa";
+      case 3:
+        return "Bao";
+      default:
+        return null
+    }
+  }
+
+  const imageChoose = (source, name, type) => {
     return (
-      <Image
-        source={source}
-        style={{ width: 100, height: 100 }}
+      <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+        <Image
+          source={source}
+          style={{ width: 100, height: 100 }}
+        />
+        <Text style={{fontWeight:'bold', marginTop:10}}>{switchName(name)}</Text>
+      </View>
+    )
+  }
+
+  const oneLine = () => {
+    return (
+      <View
+        style={{
+          width: 3,
+          height: 100,
+          backgroundColor: '#e3e3e3'
+        }}
       />
     )
   }
+
+  const linePagina = () => {
+    return (
+      <View style={{ alignItems: 'center', justifyContent: 'space-between' }}>
+        {oneLine()}
+        <View
+          style={{
+            width: 70,
+            height: 70,
+            borderRadius: 35,
+            borderWidth: 3,
+            borderColor: '#e3e3e3'
+          }}
+        />
+        {oneLine()}
+      </View>
+    )
+  }
+
   const tournamentTable = () => {
     return (
       <View style={{
-        width: '98%',
+        width: '100%',
         height: 300,
         borderRadius: 100,
         borderColor: '#c3c3c3',
@@ -65,8 +116,9 @@ const App = () => {
         paddingLeft: 20,
         paddingRight: 20
       }}>
-        {imageChoose(switchTypeAction(choose))}
-        {imageChoose(switchTypeAction(computer))}
+        {imageChoose(switchTypeAction(choose), choose, 1)}
+        {linePagina()}
+        {imageChoose(switchTypeAction(computer), computer, 2)}
       </View>
     )
   }
@@ -96,6 +148,7 @@ const App = () => {
         return null
     }
   }
+
   const handleAction = type => {
     setComputer(computer => Math.floor(Math.random() * 3) + 1)
     switch (type) {
