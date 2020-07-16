@@ -17,7 +17,9 @@ const App = () => {
       </View>
     )
   }
-
+//1 keo
+//2 bua
+//3 bao
   const handleResult = () => {
     if (!computer) return
     if (computer === choose) {
@@ -29,7 +31,7 @@ const App = () => {
     }
     else {
       playerPoint++
-      return "Bạn thắng rồi nhé :v"
+      return "Thắng rồi nhé :v"
     }
   }
 
@@ -104,7 +106,7 @@ const App = () => {
   const tournamentTable = () => {
     return (
       <View style={{
-        width: '100%',
+        width: '98%',
         height: 300,
         borderRadius: 100,
         borderColor: '#c3c3c3',
@@ -168,9 +170,23 @@ const App = () => {
     return (
       <TouchableOpacity
         onPress={() => handleAction(value)}
-        style={{ width: 140, height: 40, backgroundColor: switchTypeColor(value), marginTop: 5, marginBottom: 5, borderRadius: 10, justifyContent: 'center', alignItems: 'center' }}
-      >
-        <Text style={{ fontWeight: 'bold', color: '#ffffff' }}>{label}</Text>
+        style={{ 
+          width: 140, 
+          height: 40, 
+          backgroundColor: switchTypeColor(value), 
+          marginTop: 5, 
+          marginBottom: 5, 
+          borderRadius: 10, 
+          justifyContent: 'center', 
+          alignItems: 'center',
+          flexDirection:'row'
+        }}
+      > 
+        <Image 
+          source={switchTypeAction(value)}
+          style={{width:25, height:25}}
+        />
+        <Text style={{ fontWeight: 'bold', color: '#ffffff', paddingLeft:10 }}>{label}</Text>
       </TouchableOpacity>
     )
   }
