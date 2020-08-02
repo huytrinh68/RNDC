@@ -1,0 +1,1 @@
+export const BASE_URL = 'https://www.nedina.com/simiconnector/rest/v2/products'
